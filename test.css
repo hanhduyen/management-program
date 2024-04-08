@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#addTask{
+    margin-right: 23px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin: 33px;
+    padding: 13px;
+    gap: 37px;
+}
+img{
+    width: 150px;
+    height: 120px;
+}
+.todo-list, .blocked-list, .doing-list, .done-list{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border: 1px solid slategrey;
+    border-radius: 7px;
+    padding: 7px;
+}
+.todo-listbox, .doing-listbox, .done-listbox, .blocked-listbox{
+    width: 300px;
+}
+.todo-list{
+    background:rgb(8, 153, 201) ;
+}
+.doing-list{
+    background: rgb(249, 249, 41);
+}
+.done-list{
+    background: rgb(3, 194, 111);
+}
+.blocked-list{
+    background: red;
+}
+.card{
+    box-sizing: border-box;
+    border: 1px solid slategrey;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 13px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.line{
+    width: 200px;
+    height: 2px;
+    background-color: grey;
+}
