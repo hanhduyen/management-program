@@ -1,10 +1,40 @@
 *{
-    margin: 0;
+    margin-top: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 #addTask{
-    margin-right: 23px;
+    text-decoration: none;
+    border: none;
+    background-color: azure;
+    color: black;
+    margin-left: 1000px;
+    cursor: pointer;
+}
+#form-container{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+#form-container input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: solid 1px grey;
+    background: rgb(225, 222, 222);
+
+}
+.popup-form{
+    /* visibility: hidden; */
+    position: fixed;
+    margin: 10px 100px 30px 220px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+.form-container input[type=text]:focus{
+    background-color: #ddd;
+    outline: none;
 }
 .container{
     display: flex;
@@ -13,9 +43,16 @@
     padding: 13px;
     gap: 37px;
 }
+.form-container .cancel {
+    background-color: red;
+  }
+  
 img{
     width: 150px;
     height: 120px;
+}
+i:hover{
+    cursor: pointer;
 }
 .todo-list, .blocked-list, .doing-list, .done-list{
     display: flex;

@@ -1,62 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="test.css">
-    <script src="https://kit.fontawesome.com/cf444e3ace.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <img src="https://img.freepik.com/free-vector/tiny-business-people-responsibility-chart-with-tasks-raci-matrix-responsibility-assignment-matrix-linear-responsibility-chart-concept_335657-2430.jpg?w=826" alt="">
-    <button onclick="addTask()" id="addTask">+ newtask</button>
-    <div class="container">
-        <div class="todo-listbox">
-            <div class="todo-list">
-                <span>Todo</span>
-                <span class="number">3</span>
-            </div>
-            <!-- <div class="card">
-                <div class="title">
-                    <p>marketing</p>
-                    <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-                <b>Write SEO article for new product</b>
-                <div class="line"></div>
-                <p>This is an existential moment for effective altruism and the rationalist community writ-large</p>
-            </div> -->
-            <div class="card">
-                <div class="title">
-                    <input type="text" id="input-box" placeholder="category">
-                    <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-                <input type="text" id="title-input" placeholder="title">
-                <div class="line"></div>
-                <input type="text" id="content" placeholder="content">
-            </div>
-        </div>
-        <div class="doing-listbox">
-            <div class="doing-list">
-                <span>Doing</span>
-                <span class="number">2</span>
-            </div>
-            <p id="card"></p>
-        </div>
-        <div class="done-listbox">
-            <div class="done-list">
-                <span>Completed</span>
-                <span class="number">1</span>
-            </div>
-        </div>
-        <div class="blocked-listbox">
-            <div class="blocked-list">
-                <span>Blocked</span>
-                <span class="number">0</span>
-            </div>
-        </div>
+    <link rel="stylesheet" href="test.css" />
+    <script
+      src="https://kit.fontawesome.com/cf444e3ace.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="setTaskInPanel()">
+    <img
+      src="https://img.freepik.com/free-vector/tiny-business-people-responsibility-chart-with-tasks-raci-matrix-responsibility-assignment-matrix-linear-responsibility-chart-concept_335657-2430.jpg?w=826"
+      alt=""
+    />
+    <button onclick="openForm()" id="addTask">+ newtask</button>
+    <div class="popup-form" id="myForm">
+      <dialog id="form-container">
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        <h2>Add new todo</h2>
+        <input type="text" id="id">
+        <input type="text" id="category" placeholder="Category. Etc: Marketing...">
+        <input type="text" id="title" placeholder="title">
+        <input type="text" id="content" placeholder="content">
+        <input type="text" id="status" placeholder="status">
+        <button type="submit" class="btn" onclick="addOrUpdateTask()">submit</button>
+      </dialog>
     </div>
-</body>
-<script src="test.js"></script>
+    <div class="container">
+      <div class="todo-listbox" id="todo-listbox"  ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
+        <div id="todo-card" ></div>
+      </div>
+      <div class="doing-listbox" id="doing-listbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="doing-card" draggable="true" ondragstart="drag(event)"></div>
+      </div>
+      <div class="done-listbox" id="done-listbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="done-card" draggable="true" ondragstart="drag(event)"></div>
+      </div>
+      <div class="blocked-listbox" id="blocked-listbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="blocked-card" draggable="true" ondragstart="drag(event)"></div>
+      </div>
+  </div>
+  </body>
+  <script src="test.js"></script>
 </html>
